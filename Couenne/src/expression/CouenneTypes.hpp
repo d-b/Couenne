@@ -39,7 +39,8 @@ enum conv_type      {CURRENT_ONLY, UNIFORM_GRID, AROUND_CURPOINT};
 /** code returned by the method expression::code() */
 enum expr_type {/*COU_EXPRAUX,  COU_EXPRCLONE, COU_EXPRCOPY, */
                 COU_EXPRESSION, /***** variables, constants **************/
-		COU_EXPRCONST, COU_EXPRVAR, COU_EXPRLBOUND, COU_EXPRUBOUND, 
+		COU_EXPRCONST, COU_EXPRVAR, COU_EXPRLBOUND, COU_EXPRUBOUND,
+        COU_EXPRCONDGT, COU_EXPRCONDGE, COU_EXPRCONDLT, COU_EXPRCONDLE, COU_EXPRCONDEQ,
 		/*COU_EXPRIVAR, */ 
 		COU_EXPROP,     /***** n-ary operators *******************/
 		COU_EXPRSUB,  COU_EXPRSUM, COU_EXPRGROUP, COU_EXPRQUAD,

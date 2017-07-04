@@ -60,9 +60,9 @@ am_libCouenneExpression_la_OBJECTS = domain.lo expression.lo exprOp.lo \
 	exprDiv.lo exprExp.lo exprInv.lo exprLog.lo exprMul.lo \
 	exprTrilinear.lo exprOpp.lo exprPow.lo exprSin.lo exprCos.lo \
 	exprSub.lo exprSum.lo exprMinMax.lo exprGroup.lo exprQuad.lo \
-	compQuadFinBounds.lo exprBQuad.lo CouenneExprJac.lo \
-	CouenneExprHess.lo conv-exprAbs.lo conv-exprDiv.lo \
-	conv-exprMul.lo conv-exprMul-genCuts.lo \
+	exprCond.lo compQuadFinBounds.lo exprBQuad.lo \
+	CouenneExprJac.lo CouenneExprHess.lo conv-exprAbs.lo \
+	conv-exprDiv.lo conv-exprMul.lo conv-exprMul-genCuts.lo \
 	conv-exprMul-reformulate.lo conv-exprTrilinear.lo \
 	conv-exprTrilinear-gencuts.lo unifiedProdCuts.lo \
 	exprMul-upperHull.lo conv-exprOpp.lo conv-exprPow.lo \
@@ -365,6 +365,7 @@ libCouenneExpression_la_SOURCES = \
 	operators/exprMinMax.cpp \
 	operators/exprGroup.cpp \
 	operators/exprQuad.cpp \
+	operators/exprCond.cpp \
 	operators/compQuadFinBounds.cpp \
 	operators/bounds/exprBQuad.cpp \
 	partial/CouenneExprJac.cpp \
@@ -521,6 +522,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/exprAbs.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/exprAux.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/exprBQuad.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/exprCond.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/exprCos.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/exprDiv.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/exprExp.Plo@am__quote@
@@ -679,6 +681,13 @@ exprQuad.lo: operators/exprQuad.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='operators/exprQuad.cpp' object='exprQuad.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(LIBTOOL) --tag=CXX --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o exprQuad.lo `test -f 'operators/exprQuad.cpp' || echo '$(srcdir)/'`operators/exprQuad.cpp
+
+exprCond.lo: operators/exprCond.cpp
+@am__fastdepCXX_TRUE@	if $(LIBTOOL) --tag=CXX --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT exprCond.lo -MD -MP -MF "$(DEPDIR)/exprCond.Tpo" -c -o exprCond.lo `test -f 'operators/exprCond.cpp' || echo '$(srcdir)/'`operators/exprCond.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/exprCond.Tpo" "$(DEPDIR)/exprCond.Plo"; else rm -f "$(DEPDIR)/exprCond.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='operators/exprCond.cpp' object='exprCond.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL) --tag=CXX --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o exprCond.lo `test -f 'operators/exprCond.cpp' || echo '$(srcdir)/'`operators/exprCond.cpp
 
 compQuadFinBounds.lo: operators/compQuadFinBounds.cpp
 @am__fastdepCXX_TRUE@	if $(LIBTOOL) --tag=CXX --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT compQuadFinBounds.lo -MD -MP -MF "$(DEPDIR)/compQuadFinBounds.Tpo" -c -o compQuadFinBounds.lo `test -f 'operators/compQuadFinBounds.cpp' || echo '$(srcdir)/'`operators/compQuadFinBounds.cpp; \

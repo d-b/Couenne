@@ -140,6 +140,12 @@ includecoin_HEADERS = \
 	expression/operators/CouenneExprIf.hpp \
 	expression/operators/CouenneExprNorm.hpp \
 	expression/operators/CouenneExprPWLinear.hpp \
+	expression/operators/CouenneExprCond.hpp \
+	expression/operators/CouenneExprCondGt.hpp \
+	expression/operators/CouenneExprCondGe.hpp \
+	expression/operators/CouenneExprCondLt.hpp \
+	expression/operators/CouenneExprCondLe.hpp \
+	expression/operators/CouenneExprCondEq.hpp \
 	expression/operators/bounds/CouenneExprBMul.hpp \
 	expression/operators/bounds/CouenneExprBDiv.hpp \
 	expression/operators/bounds/CouenneExprBSin.hpp \

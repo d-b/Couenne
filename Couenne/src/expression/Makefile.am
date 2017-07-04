@@ -33,6 +33,7 @@ libCouenneExpression_la_SOURCES = \
 	operators/exprMinMax.cpp \
 	operators/exprGroup.cpp \
 	operators/exprQuad.cpp \
+	operators/exprCond.cpp \
 	operators/compQuadFinBounds.cpp \
 	operators/bounds/exprBQuad.cpp \
 	partial/CouenneExprJac.cpp \
