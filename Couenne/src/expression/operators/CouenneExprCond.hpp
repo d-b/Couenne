@@ -55,8 +55,7 @@ class exprCond: public exprOp {
 
   /// Reduce expression in standard form, creating additional aux
   /// variables (and constraints)
-  virtual inline exprAux *standardize (CouenneProblem *, bool addAux = true)
-    {return NULL;}
+  virtual exprAux *standardize (CouenneProblem *, bool addAux = true);
 
   /// Generate equality between *this and *w
   void generateCuts (expression *w, //const OsiSolverInterface &si, 

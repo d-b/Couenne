@@ -11,6 +11,8 @@
 
 #include "CouenneCutGenerator.hpp"
 #include "CouenneTypes.hpp"
+#include "CouenneProblem.hpp"
+#include "CouenneExprAux.hpp"
 #include "CouenneExprCond.hpp"
 #include "CouenneExprCondGt.hpp"
 #include "CouenneExprCondGe.hpp"
@@ -27,7 +29,12 @@ void exprCond::getBounds (expression *&lower, expression *&upper) {
 }
 
 void exprCond::generateCuts (expression *w, //const OsiSolverInterface &si, 
-			    OsiCuts &cs, const CouenneCutGenerator *cg,
-			    t_chg_bounds *chg, int,
-			    CouNumber, CouNumber) 
+                             OsiCuts &cs, const CouenneCutGenerator *cg,
+                             t_chg_bounds *chg, int,
+                             CouNumber, CouNumber)
 {}
+
+exprAux* exprCond::standardize (CouenneProblem* p, bool addAux) {
+  exprOp::standardize(p, addAux);
+  return (addAux ? (p->addAuxiliary(this)) : new exprAux(this, p->domain()));
+}
